@@ -17,6 +17,22 @@ public class KeyIndexedSort {
         String[] aux = new String[n];
         int[] count = new int[R + 2];  // +2 to handle -1 (end-of-string)
 
+        for (int i = 0; i < n; i++) {
+            count[a[i].length()]++;
+        }
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            count[a[i].length()]--;
+            if (count[a[i].length()] == 0) {
+                aux[j++] = a[i];
+                count[a[i].length()]++;
+            }
+
+        }
+
+        for (int i=0; i<j; i++){
+            a[i] = aux[i];
+        }
         // Student TODO:
         // 1. Compute frequency counts
        
